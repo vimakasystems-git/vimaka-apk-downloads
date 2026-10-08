@@ -1,0 +1,32 @@
+name: Initialize first Android release
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/initialize-first-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  create-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create draft release without APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="tvillingarnas-maleri-v1.0.0"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists."
+            exit 0
+          fi
+          gh release create "$TAG" \
+            --target main \
+            --title "Tvillingarnas Måleri Android v1.0.0" \
+            --notes "Initial Android release prepared by Vimaka Systems.\n\n**Not available for download yet.** The release will be published only after a production APK has been signed, tested and uploaded with its SHA-256 checksum.\n\nWebsite: https://johanna-juhlin.vimakasystems.workers.dev/" \
+            --draft
+          echo "Draft release created. It is not public and contains no APK."
