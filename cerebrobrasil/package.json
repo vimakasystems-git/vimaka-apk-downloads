@@ -1,0 +1,12 @@
+{
+  "name": "cerebrobrasil-installer",
+  "private": true,
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6",
+    "@capacitor/core": "^6",
+    "@capacitor/android": "^6"
+  }
+}
