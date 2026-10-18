@@ -27,7 +27,8 @@
   "bundle": {
     "active": true,
     "targets": [
-      "nsis"
+      "nsis",
+      "rpm"
     ],
     "icon": [
       "icons/icon.ico",
