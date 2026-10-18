@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "CerebroBrasil",
+  "version": "0.1.0",
+  "identifier": "com.cerebrobrasil.app",
+  "build": {
+    "frontendDist": "../dist",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "CerebroBrasil",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "url": "index.html"
+      }
+    ],
+    "security": {
+      "csp": null,
+      "freezePrototype": false
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "category": "Productivity",
+    "shortDescription": "CerebroBrasil — plataforma de IA colaborativa",
+    "longDescription": "CerebroBrasil: plataforma de IA colaborativa e multitarefa."
+  }
+}
