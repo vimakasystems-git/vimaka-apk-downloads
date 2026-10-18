@@ -1,0 +1,14 @@
+{
+  "appId": "com.cerebrobrasil.app",
+  "appName": "CerebroBrasil",
+  "webDir": "www",
+  "server": {
+    "url": "https://cerebrobrasil-com-br.base44.app",
+    "androidScheme": "https",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#0a2e25"
+  }
+}
